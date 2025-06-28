@@ -1,13 +1,13 @@
-import { Link, NavLink } from "react-router";
+import { Link } from "react-router";
 
 export function Navbar() {
   const navLinks = [
     {
-      to: "/",
+      href: "https://github.com/aazis7/vite-react-ssr-react-router/",
       title: "Source",
     },
     {
-      to: "/todos",
+      href: "https://github.com/aazis7/vite-react-ssr-react-router/blob/main/LICENSE",
       title: "License",
     },
   ];
@@ -25,11 +25,16 @@ export function Navbar() {
       </div>
       <nav className="flex gap-3 items-center">
         <ul className="flex gap-3 items-center">
-          {navLinks.map(({ title, to }) => (
+          {navLinks.map(({ title, href }) => (
             <li key={title}>
-              <NavLink to={to} className="text-foreground/95">
+              <a
+                href={href}
+                rel="noreferrer"
+                target="_blank"
+                className="text-foreground/95"
+              >
                 {title}
-              </NavLink>
+              </a>
             </li>
           ))}
         </ul>
